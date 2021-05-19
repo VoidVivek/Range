@@ -1,0 +1,492 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aveva.Core.DatabaseInternal</name>
+    </assembly>
+    <members>
+        <member name="T:Aveva.Core.Database.IDbElementCollectionManager">
+            <summary>
+            Element Collection Manager
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.IDbElementCollectionManager.ElementCanBeAdded(Aveva.Core.Database.DbElement)">
+            <summary>
+            Element can be added
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Database.IDbElementCollectionManager.IncludesElement(Aveva.Core.Database.DbElement)">
+            <summary>
+            Is element in collection
+            </summary>
+            <param name="dbValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Database.IDbElementCollectionManager.AllPrimitivesIncluded(Aveva.Core.Database.DbElement)">
+            <summary>
+            Are all primitive included?
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Database.IDbElementCollectionManager.IsPrimitiveOf(Aveva.Core.Database.DbElement,Aveva.Core.Database.DbElement)">
+            <summary>
+            Is element a primitive of parent
+            </summary>
+            <param name="elementParent"></param>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Database.IDbElementCollectionManager.Add(Aveva.Core.Database.DbElement)">
+            <summary>
+            Add element to collection
+            </summary>
+            <param name="element"></param>
+        </member>
+        <member name="M:Aveva.Core.Database.IDbElementCollectionManager.Remove(Aveva.Core.Database.DbElement)">
+            <summary>
+            Remove element from collection
+            </summary>
+            <param name="element"></param>
+        </member>
+        <member name="E:Aveva.Core.Database.IDbElementCollectionManager.Changed">
+            <summary>
+            Collection changed event
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Database.DbElementCollectionEventArgs">
+            <summary>
+            Element collection event arguments
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Database.DbElementCollectionEventArgs.ChangeList">
+            <summary>
+            List of changed elements
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Database.IDbElementContainer">
+            <summary>
+            Common definition for DbElement containers
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.Database.IDbElementContainer.RootElement">
+            <summary>
+            Root element
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Database.DbTransaction">
+            <summary>
+            For AVEVA use only
+            This class is used to Start and end a Database Transaction.
+            A Database Transaction is different from a standard UndoTransaction in that
+            a) It applies to database changes only
+            b) The only functions that can be done are to commit(end) or abort the transaction
+            c) The transaction does not go on the user undo/redo stack. i.e. a DB Transaction occurs within a standard UndoTransaction.
+            d) There are no event handlers called
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.DbTransaction.GetDbTransaction">
+            <summary>
+            Get Transaction Object
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.DbTransaction.StartTransaction">
+            <summary>
+            Start a System Transaction. The existing DB change list will be processed
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.DbTransaction.CommitTransaction">
+            <summary>
+            End the Transaction
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.DbTransaction.AbortTransaction">
+            <summary>
+            Abort the Transaction. The existing DB change list will be cleared
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.DbTransaction.#ctor">
+            <summary>
+            Protected constructor
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Database.DbTransaction.internalDbTransaction">
+            <summary>
+            Singleton factory instance
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.DbTransaction.internalGetTransaction">
+            <summary>
+            Internal methods
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.Database.DbMiscellaneous">
+            <summary>
+            For AVEVA use only
+            This class is used to store and retrieve notifications to / from Misc DB.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.DbMiscellaneous.GetDbMiscellaneous">
+            <summary>
+            Get DbMiscellaneous Object
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.DbMiscellaneous.GetWork">
+            <summary>
+            Get Work from Misc DB.
+            </summary>
+            <returns>returns true if get work is successful</returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbMiscellaneous.GetNotifications(System.String,System.String,System.Boolean)">
+            <summary>
+            Get Notification Elements from Misc DB.
+            </summary>
+            <returns>array of Notification data elements</returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbMiscellaneous.GetNotifications(System.String,System.String,System.String,System.String[],System.String,System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Get Notification Elements from Misc DB.
+            </summary>
+            <returns>array of Notification data elements</returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbMiscellaneous.GetNotificationData(Aveva.Core.Database.DbElement)">
+            <summary>
+            Get Notification Data from Misc DB for this Notification element.
+            </summary>
+            <returns>array of Notification data as an array of text</returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbMiscellaneous.StoreNotification(System.String,System.String,System.String,System.String,System.String[],System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Store Notification in Misc DB.
+            </summary>
+            <returns>True if success.</returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbMiscellaneous.GetSubscriptions(System.String)">
+            <summary>
+            Get Subscription Elements from Misc DB.
+            </summary>
+            <returns>array of Subscription data elements</returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbMiscellaneous.GetSubscriptions(System.String,System.String,System.String,System.String[],System.String,System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Get Subscription Elements from Misc DB.
+            </summary>
+            <returns>array of Subscription data elements</returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbMiscellaneous.GetSubscriptionData(Aveva.Core.Database.DbElement)">
+            <summary>
+            Get Subscription Data from Misc DB for this Subscription element.
+            </summary>
+            <returns>array of Subscription data as an array of text</returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbMiscellaneous.StoreSubscription(System.String,System.String,System.String,System.String[],System.String,System.String,System.String,System.String)">
+            <summary>
+            Store Subscription in Misc DB.
+            </summary>
+            <returns>True if success.</returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbMiscellaneous.DeleteNotifications(System.DateTime,System.DateTime,System.String,System.String,System.String)">
+            <summary>
+            Delete Notifications for a DatTime period from Misc DB.
+            </summary>
+            <returns>True if success.</returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbMiscellaneous.DeleteNotifications(System.String,System.String,System.String,System.String,System.String[],System.String,System.String)">
+            <summary>
+            Delete Notifications from Misc DB.
+            </summary>
+            <returns>True if success.</returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbMiscellaneous.DeleteSubscriptions(System.String,System.String,System.String,System.String,System.String,System.String[],System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Delete Subscriptions from Misc DB.
+            </summary>
+            <returns>True if success.</returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbMiscellaneous.DeleteNotification(Aveva.Core.Database.DbElement)">
+            <summary>
+            Delete specific Notification from Misc DB.
+            </summary>
+            <returns>True if success.</returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbMiscellaneous.DeleteNotification(Aveva.Core.Database.DbElement,System.Int32)">
+            <summary>
+            Delete specific Notification from Misc DB as part of a bulk delete.
+            </summary>
+            <returns>True if success.</returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbMiscellaneous.#ctor">
+            <summary>
+            Protected constructor
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Database.DbMiscellaneous.internalDbMiscellaneous">
+            <summary>
+            Singleton factory instance
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.DbMiscellaneous.internalGetMiscellaneous">
+            <summary>
+            Internal methods
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.DbMiscellaneous.set_targetSubscriptionrecord(System.String)">
+            <summary>
+            set value for target subscription record
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.DbMiscellaneous.StoreNotification(System.String,System.String,System.String,System.String,System.String[],System.String,System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Store Notification in Misc DB.
+            </summary>
+            <returns>True if success.</returns>
+        </member>
+        <member name="T:Aveva.Core.Database.DbCommunications">
+            <summary>
+            For AVEVA use only
+            This class is used to store and retrieve notifications to / from Comms DB.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.DbCommunications.GetDbCommunications">
+            <summary>
+            Get DbCommunications Object
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.DbCommunications.Refresh">
+            <summary>
+            Refresh.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.DbCommunications.Expunge(Aveva.Core.Database.DbElement,System.String,System.Boolean)">
+            <summary>
+            Expunge entry from comms db
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.DbCommunications.#ctor">
+            <summary>
+            Protected constructor
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.Database.DbCommunications.internalDbCommunications">
+            <summary>
+            Singleton factory instance
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.DbCommunications.internalGetCommunications">
+            <summary>
+            Internal methods
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.DbCommunications.expunge(Aveva.Core.Database.DbElement)">
+            <summary>
+            expungeDB
+            </summary> 
+        </member>
+        <member name="P:Aveva.Core.Database.DbCommunications.CommsDB">
+            <summary>
+            Get CommunicationsDB
+            </summary> 
+        </member>
+        <member name="P:Aveva.Core.Database.DbCommunications.CurrUserIdentifer">
+            <summary>
+            Get Current user USRN value
+            </summary> 
+        </member>
+        <member name="P:Aveva.Core.Database.DbCommunications.CurrUserLoginName">
+            <summary>
+            Get Current user LOGIN value
+            </summary> 
+        </member>
+        <member name="M:Aveva.Core.Database.DbCommunications.CreateProject(System.String,System.String,System.String,System.Int32,System.Boolean,Aveva.Core.Utilities.Messaging.PdmsMessage@)">
+            <summary>
+            Create project
+            </summary>
+            <param name="projname"> 3 long project Code</param>
+            <param name="username"> Username of free user</param>
+            <param name="password"> Password of free user</param>
+            <param name="dbnumber"> DB number to use (should always be 8191 currently) </param>
+            <param name="marine"> marine project or not</param>
+            <param name="error"> error if create fails</param>
+            <returns> true if successful</returns>
+        </member>
+        <member name="T:Aveva.Core.Database.DbNameSequence">
+            <summary>
+            Representation of a NameSequence
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.Database.DbNameSequence.GetDbNameSequence(System.String)">
+            <summary>
+            Create and return a new NameSequence instance.
+            </summary>
+            <param name="sequence">Name for new NameSequence</param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbNameSequence.internalGetDbNameSequence(System.String)">
+            <summary>
+            Internal implementation method to create a new NameSequence instance.
+            </summary>
+            <param name="sequence">Name for new NameSequence</param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbNameSequence.Exist">
+            <summary>
+            Check existence
+            </summary>
+            <returns>true or false</returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbNameSequence.Create">
+            <summary>
+            Creat sequence
+            </summary>
+            <returns>true or false</returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbNameSequence.Remove">
+            <summary>
+            Remove sequence
+            </summary>
+            <returns>true or false</returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbNameSequence.Next">
+            <summary>
+            Next value in sequence
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbNameSequence.SetMax(System.Int32)">
+            <summary>
+            Set last running number
+            </summary>
+            <param name="max"></param>
+            <returns>true or false</returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbNameSequence.SetStart(System.Int32)">
+            <summary>
+            Set starting point of running number
+            </summary>
+            <param name="start"></param>
+            <returns>true or false</returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbNameSequence.SetStep(System.Int32)">
+            <summary>
+            Set running number increment
+            </summary>
+            <param name="step"></param>
+            <returns>true or false</returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbNameSequence.SetWraparound">
+            <summary>
+            Allow wraparound at overflow
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbNameSequence.SetNoWraparound">
+            <summary>
+            Disallow wraparound at overflow
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbNameSequence.SetCurrent(System.Int32)">
+            <summary>
+            Set current running number
+            </summary>
+            <param name="current"></param>
+            <returns>true or false</returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbNameSequence.ReStart">
+            <summary>
+            Reset to starting point of running number
+            </summary>
+            <returns>true or false</returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbNameSequence.GetName">
+            <summary>
+            Get name of sequence
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbNameSequence.GetMax">
+            <summary>
+            Get last running number
+            </summary>
+            <returns>int</returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbNameSequence.GetStart">
+            <summary>
+            Get first running number
+            </summary>
+            <returns>int</returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbNameSequence.GetStep">
+            <summary>
+            Get running number increment
+            </summary>
+            <returns>int</returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbNameSequence.GetCurrent">
+            <summary>
+            Get current running number
+            </summary>
+            <returns>int</returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbNameSequence.IsWraparound">
+            <summary>
+            Is wraparound at overflow allowed
+            </summary>
+            <returns>true or false</returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbNameSequence.GetAvailableCounterRanges">
+            <summary>
+            Gets the available counter ranges.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbNameSequence.GetCounters(System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Gets the counters.
+            </summary>
+            <param name="requestedCase">The requested case.</param>
+            <param name="requestedCounter">The requested counter.</param>
+            <param name="requestedQuantity">The requested quantity.</param>
+            <param name="sequential">if set to <c>true</c> [sequential].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbNameSequence.CheckCountersAvailability(System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Checks the counters availability.
+            </summary>
+            <param name="counterType">Type of the counter.</param>
+            <param name="requestedCounter">The requested counter.</param>
+            <param name="requestedQuantity">The requested quantity.</param>
+            <param name="sequential">if set to <c>true</c> [sequential].</param>
+            <returns>An integer array with the available counters.</returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbNameSequence.GetUnavailableCounters(System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Gets unavailable counters
+            </summary>
+            <param name="counterType">Type of the counter.</param>
+            <param name="requestedCounter">The requested counter.</param>
+            <param name="requestedQuantity">The requested quantity.</param>
+            <param name="sequential">if set to <c>true</c> [sequential].</param>
+            <returns>An integer array with the unavailable counters.</returns>
+        </member>
+        <member name="M:Aveva.Core.Database.DbNameSequence.ReleaseCounter(System.Int32[])">
+            <summary>
+            Releases the counter.
+            </summary>
+            <param name="countersToBeReleased">The counters to be released.</param>
+        </member>
+        <member name="M:Aveva.Core.Database.DbNameSequence.GetNamSeqDbEleRefId">
+            <summary>
+            Get NameSequence DbElement RefId.
+            </summary>
+            <returns>ref id</returns>
+        </member>
+        <member name="F:Aveva.Core.Database.DbNameSequence.internalDbNameSequence">
+            <summary>
+            Singleton factory instance
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,952 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aveva.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Aveva.Core.ModuleType">
+            <summary>
+            PDMS Module type code.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.ModuleType.Dabacon">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.ModuleType.Gml">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.ModuleType.Gtx">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.ModuleType.CommandProcessor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.ModuleType.Flayer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.ModuleType.Splash">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.ModuleType.FlexLM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.ModuleType.PML">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.ModuleType.NxLib">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.ModuleType.FormsLib">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.ModuleType.InteractionManager">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.ModuleType.Druid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.ModuleType.Sgl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.ModuleType.AttributeDataFile">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.ModuleType.Global">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Aveva.Core.BeforeFinishEventHandler">
+            <summary>
+            BeforeFinish event handler delegate.
+            </summary>
+            <param name="sender">   Source of the event.</param>
+            <param name="e">    Event information.</param>
+        </member>
+        <member name="T:Aveva.Core.FinishEventHandler">
+            <summary>
+            Finish event handler delegate.
+            </summary>
+            <param name="sender">   Source of the event.</param>
+            <param name="e">    Event information.</param>
+        </member>
+        <member name="T:Aveva.Core.FatalFinishEventHandler">
+            <summary>
+            Fatal finish event handler delegate.
+            </summary>
+            <param name="sender">    Source of the event.</param>
+            <param name="e"> Startup failure event information.</param>
+        </member>
+        <member name="T:Aveva.Core.StartupFailureEventArgs">
+            <summary>
+            Startup failure event arguments class.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.StartupFailureEventArgs.#ctor(System.Int32,System.Int32,System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="mod">   The modifier.</param>
+            <param name="msg">   The message.</param>
+            <param name="txt">   The text.</param>
+        </member>
+        <member name="P:Aveva.Core.StartupFailureEventArgs.Module">
+            <summary>
+            Gets or sets the module.
+            </summary>
+            <value>
+            The module.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.StartupFailureEventArgs.Message">
+            <summary>
+            Gets or sets the message.
+            </summary>
+            <value>
+            The message.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.StartupFailureEventArgs.MessageText">
+            <summary>
+            Gets or sets the message text.
+            </summary>
+            <value>
+            The message text.
+            </value>
+        </member>
+        <member name="T:Aveva.Core.StartupFailureHandler">
+            <summary>
+            Startup failure event handler delegate.
+            </summary>
+            <param name="sender">   Source of the event.</param>
+            <param name="arg">  Startup failure event information.</param>
+        </member>
+        <member name="T:Aveva.Core.PdmsApplication">
+            <summary>
+            Entry point for PDMS application framework.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.PdmsApplication.internalPdmsApplication">
+            <summary>
+            Fields.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.Start(System.Boolean,System.Int32,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            Start the application.
+            </summary>
+            <param name="isGraphics">   True if to be started in graphics mode.</param>
+            <param name="moduleNumber"> Module number.</param>
+            <param name="isBatch">  True is to be started in batch mode.</param>
+            <param name="isNoConsole">  True if to be started with no console.</param>
+            <param name="logfile">  Filename for application log file.</param>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.Start(System.Boolean,System.Int32,System.String,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            Start the application.
+            </summary>
+            <param name="isGraphics">   True if to be started in graphics mode.</param>
+            <param name="moduleNumber"> Module number.</param>
+            <param name="moduleName">   Module name.</param>
+            <param name="isBatch">  True is to be started in batch mode.</param>
+            <param name="isNoConsole">  True if to be started with no console.</param>
+            <param name="logfile">  Filename for application log file.</param>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.Start(System.Boolean,System.Int32,System.String,System.Boolean,System.Boolean,System.String,System.String)">
+            <summary>
+            Start the application.
+            </summary>
+            <param name="isGraphics">   True if to be started in graphics mode.</param>
+            <param name="moduleNumber"> Module number.</param>
+            <param name="moduleName">   Module name.</param>
+            <param name="isBatch">  True is to be started in batch mode.</param>
+            <param name="isNoConsole">  True if to be started with no console.</param>
+            <param name="logfile">  Filename for application log file.</param>
+            <param name="deviceId"> Device identifier.</param>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.internalStart(System.Boolean,System.Int32,System.String,System.Boolean,System.Boolean,System.String,System.String)">
+            <summary>
+            Internal start.
+            </summary>
+            <param name="isGraphics">   True if to be started in graphics mode.</param>
+            <param name="moduleNumber"> Module number.</param>
+            <param name="moduleName">   Module name.</param>
+            <param name="isBatch">  True is to be started in batch mode.</param>
+            <param name="isNoConsole">  True if to be started with no console.</param>
+            <param name="logfile">  Filename for application log file.</param>
+            <param name="deviceId"> Device identifier.</param>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.StartViaCommsFile(System.Boolean,System.Int32,System.String)">
+            <summary>
+            Start the application using a Comms file.
+            </summary>
+            <param name="isGraphics">   True if to be started in graphics mode.</param>
+            <param name="moduleNumber"> Module number.</param>
+            <param name="moduleName">   Module name.</param>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.internalStartViaCommsFile(System.Boolean,System.Int32,System.String)">
+            <summary>
+            Internal start via communications file.
+            </summary>
+            <param name="isGraphics">   True if to be started in graphics mode.</param>
+            <param name="moduleNumber"> Module number.</param>
+            <param name="moduleName">   Module name.</param>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.StartEventLoop">
+            <summary>
+            Start application activity.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.internalStartEventLoop">
+            <summary>
+            Internal start event loop.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.InitialiseFandmForDotNetTests">
+            <summary>
+            Initialise F&amp;M for dotnet tests.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.internalInitialiseFandmForDotNetTests">
+            <summary>
+            Internal initialise fandm for dot net tests.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.InitialiseLexicon(System.Boolean)">
+            <summary>
+            Extra initialisation for Lexicon.
+            </summary>
+            <param name="commsfile">  true to commsfile.</param>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.internalInitialiseLexicon(System.Boolean)">
+            <summary>
+            Internal initialise lexicon.
+            </summary>
+            <param name="commsfile">  true to commsfile.</param>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.InitialiseMonitor(System.Boolean)">
+            <summary>
+            Extra initialisation for Monitor.
+            </summary>
+            <param name="commsfile">  true to commsfile.</param>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.internalInitialiseMonitor(System.Boolean)">
+            <summary>
+            Internal initialise monitor.
+            </summary>
+            <param name="commsfile">  true to commsfile.</param>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.InitialiseAdmin(System.Boolean)">
+            <summary>
+            Extra initialisation for Admin.
+            </summary>
+            <param name="commsfile">  true to commsfile.</param>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.internalInitialiseAdmin(System.Boolean)">
+            <summary>
+            Internal initialise admin.
+            </summary>
+            <param name="commsfile">  true to commsfile.</param>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.InitialiseCoreModule(System.Boolean)">
+            <summary>
+            Initialises the core module.
+            </summary>
+            <param name="commsfile">  true to commsfile.</param>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.internalInitialiseCoreModule(System.Boolean)">
+            <summary>
+            Internal initialise core module.
+            </summary>
+            <param name="commsfile">  true to commsfile.</param>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.InitialiseSMM(System.Boolean)">
+            <summary>
+            Initialises the smm.
+            </summary>
+            <param name="commsfile">  true to commsfile.</param>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.internalInitialiseSMM(System.Boolean)">
+            <summary>
+            Internal initialise smm.
+            </summary>
+            <param name="commsfile">  true to commsfile.</param>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.InitialiseUomData">
+            <summary>
+            Initialises the uom data.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.GetAtmPressureFromUomlib">
+            <summary>
+            Get the value of the Atmospheric Pressure From UOM Lib
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.internalInitialiseUomlibWithAtmPressure(System.Double)">
+            <summary>
+            Initialise Atmospheric Pressure Value
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.getAtmPressureFromUomlib">
+            <summary>
+            Get the value of the Atmospheric Pressure used to initialise UOMLIB
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.InitialiseConfiguration(System.Boolean)">
+            <summary>
+            Initialises the configuration.
+            </summary>
+            <param name="commsfile">  true to commsfile.</param>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.internalInitialiseConfiguration(System.Boolean)">
+            <summary>
+            Internal initialise configuration.
+            </summary>
+            <param name="commsfile">  true to commsfile.</param>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.OpenProjectAfterModuleSwitch">
+            <summary>
+            Open project after a module switch.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.internalOpenProjectAfterModuleSwitch">
+            <summary>
+            Internal open project after module switch.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.PlugStartMacro">
+            <summary>
+            Plug start macro after opening project.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.internalPlugStartMacro">
+            <summary>
+            Internal plug start macro.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.licFeatureExists(System.String,System.Int32)">
+            <summary>
+            Check if a feature exists on an accessible license server.
+            </summary>
+            <param name="feature">  Encrypted name of the feature.</param>
+            <param name="checkSum"> Checksum for the encrypted feature name.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.internalLicFeatureExists(System.String,System.Int32)">
+            <summary>
+            Queries if a given internal lic feature exists.
+            </summary>
+            <param name="feature">  Encrypted name of the feature.</param>
+            <param name="checkSum"> Checksum for the encrypted feature name.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.licFeatureCheckOut(System.String,System.Int32)">
+            <summary>
+            Check out a Secondary licensing feature.
+            </summary>
+            <param name="feature">  Encrypted name of the secondary feature.</param>
+            <param name="checkSum"> Checksum for the encrypted secondary feature name.</param>
+            <returns>
+            An int.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.internalLicFeatureCheckOut(System.String,System.Int32)">
+            <summary>
+            Internal lic feature check out.
+            </summary>
+            <param name="feature">  Encrypted name of the secondary feature.</param>
+            <param name="checkSum"> Checksum for the encrypted secondary feature name.</param>
+            <returns>
+            An int.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.licFeatureCheckOut(System.String,System.Int32,System.String,System.Int32)">
+            <summary>
+            Check out a Principal licensing feature If productVerCheckSum is 0 (zero) the interface uses
+            the internal version.
+            </summary>
+            <param name="feature">  Encrypted name of the feature.</param>
+            <param name="checkSum"> Checksum for the encrypted feature name.</param>
+            <param name="productVersion">   Encrypted product version.</param>
+            <param name="productVerChecksum">   Checksum for the encrypted product version.</param>
+            <returns>
+            An int.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.internalLicFeatureCheckOut(System.String,System.Int32,System.String,System.Int32)">
+            <summary>
+            Internal lic feature check out.
+            </summary>
+            <param name="feature">  Encrypted name of the secondary feature.</param>
+            <param name="checkSum"> Checksum for the encrypted secondary feature name.</param>
+            <param name="productVersion">   Encrypted product version.</param>
+            <param name="productVerChecksum">   Checksum for the encrypted product version.</param>
+            <returns>
+            An int.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.licFeatureCheckIn(System.String,System.Int32)">
+            <summary>
+            Check in a licensing feature.
+            </summary>
+            <param name="feature">  Encrypted name of the feature.</param>
+            <param name="checkSum"> Checksum for the encrypted feature name.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.internalLicFeatureCheckIn(System.String,System.Int32)">
+            <summary>
+            Internal lic feature check in.
+            </summary>
+            <param name="feature">  Encrypted name of the feature.</param>
+            <param name="checkSum"> Checksum for the encrypted feature name.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.licGetError">
+            <summary>
+            Get the text of an error message.
+            </summary>
+            <returns>
+            A string.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.internalLicGetError">
+            <summary>
+            Internal lic get error.
+            </summary>
+            <returns>
+            A string.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.licDecryptString(System.String,System.Int32)">
+            <summary>
+            Get the decrypted version of the encrypted string.
+            </summary>
+            <param name="encrypted">    Encrypted string.</param>
+            <param name="checksum"> The checksum.</param>
+            <returns>
+            A string.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.internalLicDecryptString(System.String,System.Int32)">
+            <summary>
+            Internal lic decrypt string.
+            </summary>
+            <param name="encrypted">    Encrypted string.</param>
+            <param name="checksum"> The checksum.</param>
+            <returns>
+            A string.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.licProductFeatureExists(System.Int32)">
+            <summary>
+            Check if a product feature exists on an accessible license server.
+            </summary>
+            <param name="moduleNumber">Module number identifying the product license feature to check.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.internalLicProductFeatureExists(System.Int32)">
+            <summary>
+            Queries if a given internal lic product feature exists.
+            </summary>
+            <param name="moduleNumber">Module number identifying the product license feature to check.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.licRegisterAccessToken(System.String)">
+            <summary>
+            Pass AVEVA Connect access token to ARMS
+            </summary>
+            <param name="token">AVEVA Connect access token.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.internalLicRegisterAccessToken(System.String)">
+            <summary>
+            Pass AVEVA Connect access token to ARMS
+            </summary>
+            <param name="token">AVEVA Connect access token.</param>
+            <returns>
+            true if it succeeds, false if it fails.
+            </returns>
+        </member>
+        <member name="F:Aveva.Core.PdmsApplication.ARMS_USING_ALS">
+            <summary>
+            Return value from licUsingLaas
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.PdmsApplication.ARMS_USING_LAAS">
+            <summary>
+            Return value from licUsingLaas
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.PdmsApplication.ARMS_USING_LAAS_FOR_SAAS">
+            <summary>
+            Return value from licUsingLaas
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.licUsingLaas">
+            <summary>
+            Get status of using Laas
+            </summary>
+            <returns>
+            ARMS using Als = 1,
+            ARMS using Laas = 2,
+            ARMS using Laas And Als = 3
+            ARMS using "Laas for SaaS" = 4 or 5
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.internalLicUsingLaas">
+            <summary>
+            Get status of using Laas
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.licReset">
+            <summary>
+            Reset licensing system
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.internalLicReset">
+            <summary>
+            Reset licensing system
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.Finish">
+            <summary>
+            Finish application.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.internalFinish">
+            <summary>
+            Internal finish.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.Close">
+            <summary>
+            Close application but don't exit.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.internalClose">
+            <summary>
+            Internal close.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.Exit(System.String)">
+            <summary>
+            Exit application.
+            </summary>
+            <param name="message">  Exit message.</param>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.internalExit(System.String)">
+            <summary>
+            Internal exit.
+            </summary>
+            <param name="message">  Exit message.</param>
+        </member>
+        <member name="E:Aveva.Core.PdmsApplication.StartupFailure">
+            <summary>
+            Startup failure event handler.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.PdmsApplication.BeforeFinished">
+            <summary>
+            BeforeFinished event handler.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.PdmsApplication.Finished">
+            <summary>
+            Finished event handler.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.PdmsApplication.FatalFinished">
+            <summary>
+            FatalFinished event handler.
+            </summary>
+        </member>
+        <member name="E:Aveva.Core.PdmsApplication.CoordinateSystemChanged">
+            <summary>
+            Event fired when coordinate system is changed.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.RaiseStartupFailure(System.Object,Aveva.Core.StartupFailureEventArgs)">
+            <summary>
+            Raise StartupFailure event.
+            </summary>
+            <param name="sender">   Object raising the event.</param>
+            <param name="e">    StartupFailureEventArg arguments.</param>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.RaiseBeforeFinished(System.Object,System.EventArgs)">
+            <summary>
+            Raise Finished event.
+            </summary>
+            <param name="sender">   Object raising the event.</param>
+            <param name="e">    Event arguments.</param>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.RaiseFinished(System.Object,System.EventArgs)">
+            <summary>
+            Raise Finished event.
+            </summary>
+            <param name="sender">   Object raising the event.</param>
+            <param name="e">    Event arguments.</param>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.RaiseFatalFinished(System.Object,Aveva.Core.StartupFailureEventArgs)">
+            <summary>
+            Raise Fatal Finished event.
+            </summary>
+            <param name="sender"> Object raising the event.</param>
+            <param name="e">  Event arguments.</param>
+        </member>
+        <member name="P:Aveva.Core.PdmsApplication.GraphicsMode">
+            <summary>
+            True if application is in graphics mode.
+            </summary>
+            <value>
+            true if graphics mode, false if not.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.PdmsApplication.internalGraphicsMode">
+            <summary>
+            Gets a value indicating whether the internal graphics mode.
+            </summary>
+            <value>
+            true if internal graphics mode, false if not.
+            </value>
+        </member>
+        <member name="T:Aveva.Core.PdmsApplication.CoordinateSystem">
+            <summary>
+            Values that represent coordinate systems.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.PdmsApplication.CoordinateSystem.XYZ">
+            <summary>
+            An enum constant representing the xyz option.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.PdmsApplication.CoordinateSystem.ENU">
+            <summary>
+            An enum constant representing the enu option.
+            </summary>
+        </member>
+        <member name="P:Aveva.Core.PdmsApplication.CurrentCoordinateSystem">
+            <summary>
+            Gets or sets the current coordinate system.
+            </summary>
+            <value>
+            The current coordinate system.
+            </value>
+        </member>
+        <member name="P:Aveva.Core.PdmsApplication.internalCurrentCoordinateSystem">
+            <summary>
+            Gets or sets the internal current coordinate system.
+            </summary>
+            <value>
+            The internal current coordinate system.
+            </value>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.SetPdmsEnvironmentVariable(System.String,System.String)">
+            <summary>
+            Set Pdms environment variable.
+            </summary>
+            <param name="name">   Environment variable name.</param>
+            <param name="value">  Environment variable value.</param>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.GetPdmsEnvironmentVariables(System.String)">
+            <summary>
+            Return array of environment variables which may be space or ; separated.
+            </summary>
+            <param name="expression"> The expression.</param>
+            <returns>
+            Hash object.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.ExpandPdmsEnvironmentVariables(System.String)">
+            <summary>
+            Expand string containing environment variables %env%.
+            </summary>
+            <param name="expression"> The expression.</param>
+            <returns>
+            Hash object.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.GetPdmsFilePaths(System.String)">
+            <summary>
+            Expands the evars in a given filepath to return all possible filepaths depending on evar
+            values. For example %env%/file.txt will take all values of %env% and replace it in the
+            filepath. If %env% only has one value then only one filepath will be returned. If the filepath
+            does not contain an evar %env% then the original filepath will be returned.
+            </summary>
+            <param name="filePath">   filepath containing evars.</param>
+            <returns>
+            IEnumerable of possible filepaths.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.GetExistingPdmsFilePath(System.String)">
+            <summary>
+            Takes a filepath such as %env%/file.txt where %env% in an environment variable. Returns the
+            first filepath where file.txt exists in the expanded %env% directory. If file.txt doesn't
+            exist in any locations set to %env% an empty string in returned. If the filepath does not
+            contain an environment variable like %env% the filepath is returned as it is.
+            </summary>
+            <param name="filePath"> Filepath containing evars.</param>
+            <returns>
+            Expanded filepath, or empty string if no file exists.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.internalGetPdmsEnvironmentVariables(System.String)">
+            <summary>
+            Internal get pdms environment variables.
+            </summary>
+            <param name="env">    The environment.</param>
+            <returns>
+            A string[].
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.internalExpandPdmsEnvironmentVariables(System.String)">
+            <summary>
+            Internal expand pdms environment variables.
+            </summary>
+            <param name="env">    The environment.</param>
+            <returns>
+            A string.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.internalSetPdmsEnvironmentVariable(System.String,System.String)">
+            <summary>
+            Internal set pdms environment variable.
+            </summary>
+            <param name="name">   Environment variable name.</param>
+            <param name="value">  Environment variable value.</param>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.internalProjectList(System.Boolean)">
+            <summary>
+            Get the list of projects identified by environment variables.
+            </summary>
+            <param name="isPathRequired">Used as a check to retrieve project path. 
+            If this parameter is "true", Hashtable value holds both project path and project code otherwise it just holds project code. </param>
+            <returns>A Hashtable with projectId used as the key and the 3 letter project code or List of project code and path as the value.</returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsApplication.ProjectList(System.Boolean)">
+            <summary>
+            Get the list of projects identified by environment variables.
+            </summary>
+            <param name="isPathRequired">Used as a check to retrieve project path. 
+            If this parameter is "true", Hashtable value holds both project path and project code otherwise it just holds project code. </param>
+            <returns>A Hashtable with projectId used as the key and the 3 letter project code or List of project code and path as the value.</returns>
+        </member>
+        <member name="T:Aveva.Core.PdmsVersion">
+            <summary>
+            PDMS Version query.
+            </summary>
+        </member>
+        <member name="F:Aveva.Core.PdmsVersion.internalPdmsVersion">
+            <summary>
+            The internal pdms version.
+            </summary>
+        </member>
+        <member name="M:Aveva.Core.PdmsVersion.GetModuleName(Aveva.Core.ModuleType)">
+            <summary>
+            Retrieve the name of a PDMS module.
+            </summary>
+            <param name="module">   Module identifier.</param>
+            <returns>
+            Module name.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsVersion.internalGetModuleName(Aveva.Core.ModuleType)">
+            <summary>
+            Internal get module name.
+            </summary>
+            <param name="module">   Module identifier.</param>
+            <returns>
+            A string.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsVersion.GetModuleVersion(Aveva.Core.ModuleType)">
+            <summary>
+            Retrieve the version of a PDMS module.
+            </summary>
+            <param name="module">   Module identifier.</param>
+            <returns>
+            Module version identifier.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsVersion.internalGetModuleVersion(Aveva.Core.ModuleType)">
+            <summary>
+            Internal get module version.
+            </summary>
+            <param name="module">   Module identifier.</param>
+            <returns>
+            A string.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsVersion.GetCopyright">
+            <summary>
+            Retrieve copyright information for PDMS.
+            </summary>
+            <returns>
+            Copyright text.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsVersion.internalGetCopyright">
+            <summary>
+            Internal get copyright.
+            </summary>
+            <returns>
+            A string.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsVersion.GetStatus">
+            <summary>
+            Retrieve any special status instructions (i.e. for pre-release builds)
+            </summary>
+            <returns>
+            Status text.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsVersion.internalGetStatus">
+            <summary>
+            Internal get status.
+            </summary>
+            <returns>
+            A string.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsVersion.GetName">
+            <summary>
+            Retrieve name of current module (i.e. VANTAGE PDMS Design)
+            </summary>
+            <returns>
+            Current module name.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsVersion.internalGetName">
+            <summary>
+            Internal get name.
+            </summary>
+            <returns>
+            A string.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsVersion.GetShortBanner">
+            <summary>
+            Retrieve short banner string (i.e. qbann)
+            </summary>
+            <returns>
+            Banner text.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsVersion.internalGetShortBanner">
+            <summary>
+            Internal get short banner.
+            </summary>
+            <returns>
+            A string.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsVersion.GetCompanyName">
+            <summary>
+            Retrieve company name PDMS is licensed to.
+            </summary>
+            <returns>
+            Licenced company name.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsVersion.internalGetCompanyName">
+            <summary>
+            Internal get company name.
+            </summary>
+            <returns>
+            A string.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsVersion.GetVersion">
+            <summary>
+            Retrieve version number of PDMS excluding Mk (i.e. 11.6)
+            </summary>
+            <returns>
+            PDMS version identifier.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsVersion.internalGetVersion">
+            <summary>
+            Internal get version.
+            </summary>
+            <returns>
+            A string.
+            </returns>
+        </member>
+        <member name="M:Aveva.Core.PdmsVersion.SetProductInfo(System.String,System.String,System.String)">
+            <summary>
+            Set product version information.
+            </summary>
+            <param name="version"></param>
+            <param name="buildNumber"></param>
+            <param name="date"></param>
+        </member>
+        <member name="M:Aveva.Core.PdmsVersion.internalSetProductInfo(System.String,System.String,System.String)">
+            <summary>
+            Internal set product information.
+            </summary>
+            <param name="version">  Product version.</param>
+            <param name="buildNumber">  Product build number.</param>
+            <param name="date"> The date.</param>
+        </member>
+        <member name="M:Aveva.Core.PdmsVersion.AddSubsystemInfo(System.String,System.String,System.String,System.String)">
+            <summary>
+            Add version information about subsystem.
+            </summary>
+            <param name="subsystem"></param>
+            <param name="version"></param>
+            <param name="buildNumber"></param>
+            <param name="date"></param>
+        </member>
+        <member name="M:Aveva.Core.PdmsVersion.internalAddSubsystemInfo(System.String,System.String,System.String,System.String)">
+            <summary>
+            Internal add subsystem information.
+            </summary>
+            <param name="subsystem">    Subsystem name.</param>
+            <param name="version">  Product version.</param>
+            <param name="buildNumber">  Product build number.</param>
+            <param name="date"> The date.</param>
+        </member>
+    </members>
+</doc>

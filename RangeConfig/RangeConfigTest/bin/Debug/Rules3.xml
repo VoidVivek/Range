@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<ArrayOfRule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Rule>
+    <MinValue>0</MinValue>
+    <MaxValue>0</MaxValue>
+    <Sequence>0</Sequence>
+    <Conditions>
+      <Condition>
+        <Sequence>0</Sequence>
+        <AndOr>None</AndOr>
+        <ComparisonOperator>Equal</ComparisonOperator>
+        <IsGrouped>false</IsGrouped>
+        <StatusInGroup>None</StatusInGroup>
+      </Condition>
+    </Conditions>
+  </Rule>
+</ArrayOfRule>

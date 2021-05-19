@@ -1,0 +1,13 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Aveva.CounterRange"
+        xmlns:Views="clr-namespace:Aveva.CounterRange.Views" x:Class="Aveva.CounterRange.HostWindow"
+        mc:Ignorable="d"
+        Title="HostWindow" Height="450" Width="890.161">
+    <DockPanel Width="Auto" Height="Auto" LastChildFill="True">
+        <Views:RangeConfigsControl HorizontalAlignment="Left" Margin="0,10,-77,-8" VerticalAlignment="Top" Width="Auto" Height="Auto"/>
+    </DockPanel>
+</Window>
